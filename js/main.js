@@ -311,9 +311,11 @@ function BTCCallback(event) {
 }
 
 // Initialize a socket to blockchain.info and register ourselves to receive transaction events
-var BTC_MAIN_SOCKET = InitializeWebSocket("wss://ws.blockchain.info/inv", "BTC", {
-	op: "unconfirmed_sub"
-}, BTCCallback);
+$( document ).ready( function() {
+	var BTC_MAIN_SOCKET = InitializeWebSocket("wss://ws.blockchain.info/inv", "BTC", {
+		op: "unconfirmed_sub"
+	}, BTCCallback);
+});
 
 /* New block event -- saving for later :)
 	/*
